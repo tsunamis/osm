@@ -1,0 +1,704 @@
+{
+  "system": {
+    "publicstatus": {
+      "enabled": true
+    },
+    "poe": {
+      "enabled": false
+    },
+    "users": [
+      {
+        "agreement": true,
+        "home": "\/data",
+        "name": "admin",
+        "password": "oHSl3yqR.t1uQ"
+      },
+      {
+        "shell": "\/bin\/false",
+        "home": "\/var\/run\/openntpd",
+        "name": "_ntp",
+        "password": "*",
+        "gid": 65534,
+        "uid": 1
+      }
+    ],
+    "date": {
+      "date": "31\/01\/2013",
+      "time": "00:00",
+      "timezone": "UTC-02:00"
+    },
+    "log": {
+      "level": "debug"
+    },
+    "device": {
+      "location": "AutoTestlab2",
+      "name": "CPE_301",
+      "coordinate": {
+        "latitude": 0,
+        "longitude": 0
+      },
+      "contact": "mindaugas@wilibox.com",
+      "firmwareid": "APCPE.QM-1"
+    }
+  },
+  "network": {
+    "router": {
+      "lan": {
+        "ip": {
+          "prefix": 24,
+          "ip": "192.168.2.66"
+        }
+      },
+      "secondary": {
+        "enabled": false,
+        "ip": {
+          "prefix": 24,
+          "ip": "192.168.2.250"
+        }
+      },
+      "wan": {
+        "pppoe": {
+          "vlan": {
+            "id": 2,
+            "enabled": false
+          },
+          "mtu": 1492,
+          "dns": {
+            "enabled": false,
+            "servers": [
+              "",
+              ""
+            ]
+          },
+          "password": "pass",
+          "username": "user"
+        },
+        "mode": "dynamic",
+        "static": {
+          "gateway": "192.168.3.1",
+          "ip": [
+            {
+              "prefix": 24,
+              "ip": "192.168.3.100"
+            }
+          ],
+          "dns": {
+            "servers": [
+              "",
+              ""
+            ]
+          }
+        },
+        "dynamic": {
+          "fallback": true,
+          "gateway": "192.168.3.1",
+          "ip": [
+            {
+              "prefix": 24,
+              "ip": "192.168.3.100"
+            }
+          ],
+          "dns": {
+            "enabled": false,
+            "servers": [
+              "",
+              ""
+            ]
+          }
+        }
+      }
+    },
+    "ethernet": {
+      "eth0": {
+        "autoneg": true,
+        "enabled": true,
+        "advertise": "auto",
+        "duplex": "full",
+        "speed": 100
+      }
+    },
+    "router6": {
+      "lan": {
+        "ip": {
+          "prefix": 64,
+          "ip": "fc00:1::c0:a8:2:42"
+        }
+      },
+      "wan": {
+        "pppoe": {
+          "vlan": {
+            "id": 2,
+            "enabled": false
+          },
+          "mtu": 1492,
+          "dns": {
+            "enabled": false,
+            "servers": [
+              "",
+              ""
+            ]
+          },
+          "password": "pass",
+          "username": "user"
+        },
+        "mode": "static",
+        "static": {
+          "gateway": "fc00::c0:a8:2:1",
+          "ip": [
+            {
+              "prefix": 64,
+              "ip": "fc00::c0:a8:2:42"
+            }
+          ],
+          "dns": {
+            "servers": [
+              "",
+              ""
+            ]
+          }
+        },
+        "dynamic": {
+          "stateful": true,
+          "prefixdelegation": false,
+          "dns": {
+            "enabled": false,
+            "servers": [
+              "",
+              ""
+            ]
+          }
+        }
+      }
+    },
+    "bridge": {
+      "vlan": {
+        "id": 2,
+        "enabled": false
+      },
+      "management": {
+        "dynamic": {
+          "fallback": true,
+          "gateway": "192.168.2.1",
+          "ip": [
+            {
+              "prefix": 24,
+              "ip": "192.168.2.66"
+            }
+          ],
+          "dns": {
+            "enabled": false,
+            "servers": [
+              "",
+              ""
+            ]
+          }
+        },
+        "mode": "static",
+        "static": {
+          "gateway": "10.3.1.26",
+          "ip": [
+            {
+              "prefix": 24,
+              "ip": "10.3.1.101"
+            }
+          ],
+          "dns": {
+            "servers": [
+              "8.8.8.8",
+              "8.8.8.9"
+            ]
+          }
+        },
+        "secondary": {
+          "enabled": false,
+          "ip": {
+            "prefix": 24,
+            "ip": "192.168.2.31"
+          }
+        }
+      },
+      "ipv6": true,
+      "management6": {
+        "mode": "dynamic",
+        "static": {
+          "gateway": "fc00::c0:a8:2:1",
+          "ip": [
+            {
+              "prefix": 64,
+              "ip": "fc00::c0:a8:2:42"
+            }
+          ],
+          "dns": {
+            "servers": [
+              "",
+              ""
+            ]
+          }
+        },
+        "dynamic": {
+          "stateful": false,
+          "dns": {
+            "enabled": false,
+            "servers": [
+              "",
+              ""
+            ]
+          }
+        }
+      },
+      "vlantermination": {
+        "data": {
+          "id": 100,
+          "enabled": false
+        },
+        "multicast": {
+          "priority": 7,
+          "id": 100,
+          "enabled": false
+        }
+      }
+    },
+    "nat": true,
+    "topology": "bridge"
+  },
+  "wireless": {
+    "radio": [
+      {
+        "ieeemode": "an",
+        "ifname": "wifi0",
+        "fragmentation": {
+          "enabled": false,
+          "size": 256
+        },
+        "bawinsize": 64,
+        "atpc": false,
+        "wjet": {
+          "version": "auto",
+          "enabled": true
+        },
+        "enabled": true,
+        "txpower": 20,
+        "channel": {
+          "width": 40,
+          "autowidth": true,
+          "extension": "upper",
+          "nonstandard": true,
+          "hideindoor": true,
+          "select": "all"
+        },
+        "prohibited": false,
+        "amsdu": true,
+        "antennagain": 0,
+        "repeater": {
+          "security": {
+            "wpapsk": {
+              "passphrase": ""
+            },
+            "mode": "open",
+            "wep": {
+              "index": 1,
+              "key": "",
+              "length": 128
+            },
+            "wpaenterprise": {
+              "authentication": {
+                "password": "password",
+                "identity": "username",
+                "eap": "ttls"
+              }
+            }
+          },
+          "bssid": {
+            "value": "00:00:00:00:00:00",
+            "enabled": false
+          },
+          "rate": {
+            "legacy": "auto",
+            "mcs": "auto"
+          },
+          "ssid2vlan": {
+            "id": 10,
+            "enabled": false
+          },
+          "wds": false,
+          "management": {
+            "enabled": true,
+            "tagged": true
+          },
+          "ssid": "CPE",
+          "shortgi": true,
+          "cwm": true,
+          "enabled": false
+        },
+        "vap": [
+          {
+            "acl": {
+              "fromurl": {
+                "interval": 60,
+                "url": "http:\/\/",
+                "autoupdate": false
+              },
+              "policy": "open",
+              "source": "manually"
+            },
+            "mcastenhance": true,
+            "hidden": false,
+            "ifname": "ath0",
+            "wds": true,
+            "mode": "sta",
+            "management": {
+              "enabled": true,
+              "tagged": true
+            },
+            "ssid": "ipoll64_ac",
+            "security": {
+              "mode": "open",
+              "wpaenterprise": {
+                "das": {
+                  "clientip": "0.0.0.0",
+                  "secret": "",
+                  "port": 3799,
+                  "enabled": false
+                },
+                "authentication": {
+                  "password": "password",
+                  "identity": "username",
+                  "eap": "ttls",
+                  "servers": [
+                    {
+                      "secret": "",
+                      "port": 1812,
+                      "address": "0.0.0.0"
+                    }
+                  ]
+                },
+                "accounting": {
+                  "enabled": true,
+                  "servers": [
+                    {
+                      "secret": "",
+                      "port": 1813,
+                      "address": "0.0.0.0"
+                    }
+                  ]
+                }
+              },
+              "uam": {
+                "profile": "custom",
+                "custom": {
+                  "redirport": 3990,
+                  "acl": {
+                    "autoacl": {
+                      "mode": "interval",
+                      "interval": 3600,
+                      "url": "",
+                      "enabled": false
+                    },
+                    "enabled": true
+                  },
+                  "dhcp": {
+                    "network": "192.168.5.0",
+                    "netmask": "255.255.255.0",
+                    "dns": {
+                      "servers": [
+                        "",
+                        ""
+                      ]
+                    }
+                  },
+                  "limits": {
+                    "download": 0,
+                    "upload": 0
+                  },
+                  "wisprdesc": {
+                    "location": "",
+                    "e164cc": 0,
+                    "isocc": "",
+                    "network": "",
+                    "e164ac": 0,
+                    "operator": ""
+                  },
+                  "autoacl": {
+                    "url": "",
+                    "mode": "interval",
+                    "interval": 3600,
+                    "enabled": false
+                  },
+                  "autoconfig": {
+                    "mode": "interval",
+                    "interval": 3600,
+                    "url": "",
+                    "enabled": false
+                  },
+                  "nasid": "",
+                  "radius": {
+                    "server1": "",
+                    "secret": "",
+                    "acctport": 1813,
+                    "authport": 1812,
+                    "server2": ""
+                  },
+                  "uiport": 4990,
+                  "web": {
+                    "mode": "internal",
+                    "external": {
+                      "secret": "",
+                      "logouturl": "https:\/\/",
+                      "loginurl": "https:\/\/",
+                      "blacklisturl": "https:\/\/",
+                      "welcomeurl": "https:\/\/"
+                    },
+                    "internal": {
+                      "https": {
+                        "certfile": "",
+                        "keyfile": "",
+                        "enabled": false
+                      }
+                    }
+                  },
+                  "monitoring": {
+                    "interval": 3600,
+                    "testurl": "",
+                    "enabled": false
+                  },
+                  "address": "192.168.5.66"
+                }
+              },
+              "wep": {
+                "index": 1,
+                "key": "",
+                "length": 128
+              },
+              "wpapsk": {
+                "passphrase": ""
+              }
+            },
+            "maxclients": 128,
+            "bssid": {
+              "value": "00:00:00:00:00:00",
+              "enabled": false
+            },
+            "rate": {
+              "legacy": "auto",
+              "mcs": "auto"
+            },
+            "shortgi": true,
+            "failover": {
+              "security": {
+                "wpapsk": {
+                  "passphrase": ""
+                },
+                "mode": "open",
+                "wep": {
+                  "index": 1,
+                  "key": "",
+                  "length": 128
+                },
+                "wpaenterprise": {
+                  "authentication": {
+                    "password": "",
+                    "identity": "",
+                    "eap": "ttls"
+                  }
+                }
+              },
+              "bssid": {
+                "value": "00:00:00:00:00:00",
+                "enabled": false
+              },
+              "enabled": false,
+              "ssid": "failover-SSID",
+              "recover": {
+                "enabled": true,
+                "timeout": 720
+              }
+            },
+            "ssid2vlan": {
+              "id": 301,
+              "enabled": false
+            },
+            "wmm": true,
+            "l2isolation": false,
+            "minsignal": -100,
+            "cwm": false
+          }
+        ],
+        "dfs": true,
+        "rts": {
+          "enabled": false,
+          "size": 256
+        },
+        "acktimeout": 100
+      }
+    ],
+    "countrycode": "CT",
+    "scenario": "ptmp"
+  },
+  "services": {
+    "dhcp6d": {
+      "pool": {
+        "to": "2001::ffff",
+        "from": "2001::1000"
+      },
+      "enabled": false,
+      "stateful": true,
+      "gateway": "2000::66",
+      "prefix": 64,
+      "leasetime": 86400
+    },
+    "dhcpd": {
+      "pool": {
+        "to": "192.168.2.200",
+        "from": "192.168.2.101"
+      },
+      "enabled": true,
+      "gateway": "192.168.2.66",
+      "prefix": 24,
+      "leasetime": 86400
+    },
+    "snmp": {
+      "enabled": true,
+      "ropassword": "password",
+      "rocommunity": "public",
+      "rouser": "public"
+    },
+    "ntp": {
+      "enabled": true,
+      "servers": [
+        "pool.ntp.org"
+      ]
+    },
+    "discovery": {
+      "enabled": false
+    },
+    "http": {
+      "port": 80,
+      "enabled": true
+    },
+    "ssh": {
+      "port": 22,
+      "enabled": true
+    },
+    "telnet": {
+      "port": 23,
+      "enabled": true
+    },
+    "ledd": {
+      "enabled": true
+    },
+    "wnms": {
+      "enabled": false,
+      "host": "https:\/\/domain-or-ip"
+    },
+    "alert": {
+      "alerts": {
+        "rxdrop_pct": {
+          "trap": false,
+          "limit": 15
+        },
+        "rxdrop": {
+          "trap": false,
+          "limit": 1000
+        },
+        "reboot": {
+          "trap": false
+        },
+        "ping": {
+          "trap": false,
+          "hosts": [
+            {
+              "time": 1000,
+              "ip": ""
+            }
+          ]
+        },
+        "txretry_pct": {
+          "trap": false,
+          "limit": 15
+        },
+        "txretry": {
+          "trap": false,
+          "limit": 100
+        },
+        "noise": {
+          "trap": false,
+          "limit": -90
+        },
+        "uptime": {
+          "trap": false,
+          "interval": 60
+        },
+        "radiostatus": {
+          "trap": false
+        },
+        "etherstatus": {
+          "trap": false
+        },
+        "rssi": {
+          "trap": false,
+          "limit": 60
+        },
+        "freqchange": {
+          "trap": false
+        }
+      },
+      "interval": 10,
+      "snmp": {
+        "port": 162,
+        "manager": "192.168.1.254",
+        "retry": 5,
+        "inform": false,
+        "community": "public",
+        "timeout": 5
+      },
+      "enabled": true
+    },
+    "tc": {
+      "master": {
+        "enabled": false,
+        "profiles": [
+          {
+            "outgoing": {
+              "speed": 2048,
+              "burst": 59,
+              "limited": true
+            },
+            "incoming": {
+              "speed": 1024,
+              "burst": 50,
+              "limited": false
+            },
+            "name": "Default"
+          }
+        ]
+      },
+      "managed": {
+        "enabled": false,
+        "profiles": [
+          {
+            "outgoing": {
+              "speed": 2048,
+              "burst": 59,
+              "limited": true
+            },
+            "incoming": {
+              "speed": 1000,
+              "burst": 50,
+              "limited": false
+            },
+            "name": "Default"
+          }
+        ]
+      }
+    },
+    "qos": {
+      "enabled": true
+    },
+    "pingwatchdog": {
+      "ip": "192.168.2.66",
+      "interval": 1,
+      "failcount": 2,
+      "enabled": false
+    }
+  }
+}
